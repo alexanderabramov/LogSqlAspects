@@ -4,29 +4,11 @@ using System.Data.Common;
 using System.Data.SqlClient;
 using log4net.Config;
 
-// I'd expect one entry to cover IDbCommand, Common.DbCommand, derivatives and implementers,
-// but it does not do so
-//[assembly: LogSqlAspects.LogAdoNetAttribute(
-//    AttributeTargetAssemblies = "System.Data",
-//    AttributeTargetTypes = "System.Data.*DbCommand",
-//    AttributeTargetMembers = "Execute*" // ExecuteScalar, NonQuery, Reader
-//    )]
-
 [assembly: LogSqlAspects.LogAdoNetAttribute(
     AttributeTargetAssemblies = "System.Data",
-    AttributeTargetTypes = "System.Data.IDbCommand",
+    AttributeTargetTypes = "System.Data.*Command", //@"regex:^System\.Data\.(Common\.DbCommand|IDbCommand|SqlClient\.SqlCommand)$",
     AttributeTargetMembers = "Execute*"
     )]
-//[assembly: LogSqlAspects.LogAdoNetAttribute(
-//    AttributeTargetAssemblies = "System.Data",
-//    AttributeTargetTypes = "System.Data.Common.DbCommand",
-//    AttributeTargetMembers = "Execute*"
-//    )]
-//[assembly: LogSqlAspects.LogAdoNetAttribute(
-//    AttributeTargetAssemblies = "System.Data",
-//    AttributeTargetTypes = "System.Data.SqlClient.SqlCommand",
-//    AttributeTargetMembers = "Execute*"
-//    )]
 
 namespace LogSqlAspects.Demo
 {

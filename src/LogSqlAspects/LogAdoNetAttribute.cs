@@ -16,14 +16,22 @@ namespace LogSqlAspects
     {
         #region Compile-time
 
-        public override void CompileTimeInitialize(MethodBase method)
-        {
-            MessageSource.MessageSink.Write(new Message(SeverityType.ImportantInfo, "LogAdoNetApplied", "Intercepted calls to " + method.DeclaringType.FullName + " " + method.Name, method.Name));
-        }
-
         public override bool CompileTimeValidate(MethodBase method)
         {
-            return method.DeclaringType.IsAssignableFrom(typeof(IDbCommand));
+            bool isValid = typeof(IDbCommand).IsAssignableFrom(method.DeclaringType);
+            if (isValid)
+            {
+                MessageSource.MessageSink.Write(
+                    new Message(SeverityType.ImportantInfo, "LogAdoNetApplied",
+                                string.Format("Intercepted calls to {0} {1}", method.DeclaringType.FullName, method.Name), method.Name));
+            }
+            else
+            {
+                MessageSource.MessageSink.Write(
+                    new Message(SeverityType.ImportantInfo, "LogAdoNetInvalidApplication",
+                                string.Format("Attempted interception of calls to {0} {1} was invalid", method.DeclaringType.FullName, method.Name), method.Name));
+            }
+            return isValid;
         }
 
         #endregion
