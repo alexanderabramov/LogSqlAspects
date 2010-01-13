@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogSqlAspects", "LogSqlAspects\LogSqlAspects.csproj", "{C577211B-8161-457C-A213-50AD35354F2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogSqlAspects.Demo", "LogSqlAspects.Demo\LogSqlAspects.Demo.csproj", "{F72FA926-56D2-4114-91C4-5225352E8C49}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C577211B-8161-457C-A213-50AD35354F2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C577211B-8161-457C-A213-50AD35354F2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C577211B-8161-457C-A213-50AD35354F2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C577211B-8161-457C-A213-50AD35354F2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F72FA926-56D2-4114-91C4-5225352E8C49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F72FA926-56D2-4114-91C4-5225352E8C49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F72FA926-56D2-4114-91C4-5225352E8C49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F72FA926-56D2-4114-91C4-5225352E8C49}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

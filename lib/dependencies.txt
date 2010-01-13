@@ -1,0 +1,7 @@
+PostSharp
+v1.5.6.629 Debug
+http://www.postsharp.org/
+
+log4net
+v1.2.10
+http://logging.apache.org/log4net/
